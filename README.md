@@ -13,7 +13,11 @@ Dockerfile é um arquivo de texto que contêm instruções que o Docker usa para
 Docker Compose é uma ferramenta utilizada para gerenciar aplicações compostas por múltiplos containers. Ele é usado quando um projeto depende de vários serviços trabalhando juntos, como aplicação, banco de dados e sistema de cache. O principal problema que o Docker composse resolve é a complexidade de iniciar e configurar vários containers manualmente. Ao invés de executar vários comandos separados, toda a configuração fica centralizada em um único local. Como se ele encurtasse o trabalho iniciando tudo que que a aplicação precisa em um único lugar.
 
 ## Exemplo Prático Descreva com suas palavras o que acontece quando executamos “docker compose up”
-Quando esse comando é executado o Docker compose faz a leitura do arquivo e verifica quais serviços precisam ser iniciados, logo após ele baixa as imagens necessárias, cria os containers, configura a rede e volumes e inicia os serviços automaticamente.
+Quando esse comando é executado o Docker compose faz a leitura do arquivo e verifica quais serviços precisam ser iniciados, logo após ele baixa as imagens necessárias, cria os containers, configura a rede e volumes e inicia os serviços automaticamente. Quando executamos o comando `docker compose up`, o Docker Compose lê o arquivo `docker-compose.yml` para verificar quais serviços precisam ser iniciados.
+Após isso, ele verifica se as imagens necessárias já existem no computador. Caso não existam, ele realiza o download ou cria as imagens automaticamente.
+Em seguida, o Docker cria os containers definidos no arquivo, configura redes e volumes, estabelece a comunicação entre os serviços e inicia tudo automaticamente.
+Por exemplo, em uma aplicação que utiliza uma API e um banco de dados, apenas o comando `docker compose up` é suficiente para iniciar ambos os serviços e permitir que eles se comuniquem corretamente.
+Isso facilita o desenvolvimento, reduz a quantidade de comandos necessários e torna a configuração do ambiente mais simples e organizada.
 
 ## Referências
 - https://docs.docker.com/get-started/docker-overview/
